@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment directories (defensive — env is managed outside the repo)
+.conda/
+.venv/
+.uv-cache/
+
+# macOS
+.DS_Store
+
+# Raw data is committed (small enough, and eliminates download-at-prep-time
+# as a failure point — see notebook_curriculum_research.md). The download
+# script remains useful for provenance documentation and late-May
+# re-validation against a fresh GTFS feed.

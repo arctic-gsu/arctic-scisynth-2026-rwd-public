@@ -1,0 +1,44 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  fast:
+    name: Fast tests (no notebook execution)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: setup/environment.yml
+          cache-environment: true
+          cache-environment-key: env-${{ hashFiles('setup/environment.yml', 'setup/environment.lock.yml') }}
+
+      - name: Run fast tests
+        shell: bash -l {0}
+        run: python -m pytest tests/ -m "not slow" -v
+
+  slow:
+    name: Slow tests (notebook execution)
+    runs-on: ubuntu-latest
+    needs: fast
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: setup/environment.yml
+          cache-environment: true
+          cache-environment-key: env-${{ hashFiles('setup/environment.yml', 'setup/environment.lock.yml') }}
+
+      - name: Execute every solution notebook
+        shell: bash -l {0}
+        run: python -m pytest tests/ -m slow -v

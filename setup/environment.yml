@@ -1,0 +1,51 @@
+name: arctic-scisynth-2026-rwd
+
+# Canonical environment definition for the ARCTIC SciSynth 2026 Real-World
+# Data Analysis track. This is the source of truth for both the Phase 0
+# dry run and the student-facing camp environment; dev and camp run the
+# same env so there are no "worked in dev, broke at camp" surprises.
+#
+# Create with: conda env create -f setup/environment.yml
+# Activate with: conda activate arctic-scisynth-2026-rwd
+# Update after editing: conda env update -f setup/environment.yml --prune
+# Run commands: conda run -n arctic-scisynth-2026-rwd python ...
+#
+# The lockfile (setup/environment.lock.yml) is generated from this file
+# via: conda env export --from-history -n arctic-scisynth-2026-rwd
+# Commit both files.
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.11
+
+  # Core analysis
+  - pandas
+  - numpy
+
+  # Plotting
+  - matplotlib
+  - seaborn
+  - folium            # locked map library — see SPEC planning notes
+
+  # Geo (for haversine distances; geopy.distance.great_circle)
+  - geopy
+
+  # I/O
+  - openpyxl          # NTD Excel reader
+  - requests          # Census API + misc downloads
+
+  # Notebook tooling
+  - jupyter
+  - ipykernel
+  - nbformat
+
+  # Testing (Phase 5 will use these; cheap to install now)
+  - pytest
+  - nbmake
+
+  # Planning-doc authoring (v6 → v7 instructor-guide touch-up and
+  # any future revisions)
+  - python-docx
