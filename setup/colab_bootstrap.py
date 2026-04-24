@@ -4,14 +4,14 @@ Every notebook's first executable cell calls ``bootstrap()``:
 
     import urllib.request, sys
     urllib.request.urlretrieve(
-        "https://raw.githubusercontent.com/arctic-gsu/arctic-scisynth-2026-rwd/main/setup/colab_bootstrap.py",
+        "https://raw.githubusercontent.com/arctic-gsu/arctic-scisynth-2026-rwd-public/main/setup/colab_bootstrap.py",
         "/tmp/colab_bootstrap.py",
     )
     sys.path.insert(0, "/tmp")
     from colab_bootstrap import bootstrap
     bootstrap()
 
-In Google Colab: clones the repo to ``/content/arctic-scisynth-2026-rwd``
+In Google Colab: clones the repo to ``/content/arctic-scisynth-2026-rwd-public``
 (skip if already cloned), ``os.chdir``s into it, and ``pip install``s the
 runtime dependencies that Colab doesn't ship with (skip if already
 importable). Running it from every cell is cheap — the clone check, pip
@@ -28,8 +28,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-REPO_URL = "https://github.com/arctic-gsu/arctic-scisynth-2026-rwd.git"
-REPO_DIR = "/content/arctic-scisynth-2026-rwd"
+REPO_URL = "https://github.com/arctic-gsu/arctic-scisynth-2026-rwd-public.git"
+REPO_DIR = "/content/arctic-scisynth-2026-rwd-public"
 
 # Deps Colab's default stack lacks. Keep in sync with setup/environment.yml.
 COLAB_EXTRA_PIP = [

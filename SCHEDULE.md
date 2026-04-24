@@ -6,8 +6,7 @@ Each day has a shared-morning block (taught across all three SciSynth
 tracks by different instructors) and a RWD-track afternoon project
 block of ~2.5–3 hours. This document covers the afternoon block only.
 Morning sessions cover Python basics, Pandas, data cleaning, data
-visualization, and an intro to ML; see
-`planning/proposed_data_analysis_sessions.docx`.
+visualization, and an intro to ML.
 
 ---
 

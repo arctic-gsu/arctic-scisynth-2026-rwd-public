@@ -28,9 +28,9 @@ Expected output ends with a line beginning `✅`.
 
 Every notebook in `notebooks/` starts with a cell that runs
 `setup/colab_bootstrap.py`. In Colab that cell clones the repo into
-`/content/arctic-scisynth-2026-rwd`, installs dependencies with pip,
-and chdir's into the repo root. Locally, the cell is a no-op (assumes
-the conda env is already active).
+`/content/arctic-scisynth-2026-rwd-public`, installs dependencies with
+pip, and chdir's into the repo root. Locally, the cell is a no-op
+(assumes the conda env is already active).
 
 ## Re-fetching datasets
 
@@ -60,7 +60,7 @@ NTD Excel file by hand.
 
 ## Known dataset surprises
 
-See `planning/phase0_dryrun/README.md` for the full log. Headline:
+Headline:
 
 - **GTFS `location_type` is all NaN** — use `data/processed/rail_stops.csv`.
 - **GWCC/CNN Center has been renamed "SEC District Station"** in the
@@ -74,4 +74,4 @@ See `planning/phase0_dryrun/README.md` for the full log. Headline:
 
 A late-May GTFS re-validation is planned (target: 2026-05-25) so the
 feed reflects MARTA's NextGen Bus Network launch on 2026-04-18. Rail
-data is unaffected by NextGen. See `instructor/preflight_checklist.md`.
+data is unaffected by NextGen.

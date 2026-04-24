@@ -48,8 +48,8 @@ notebook *and* committed in git. This means:
    learn by reading code, you learn by writing it.
 4. **If a checkpoint fails**, read the assertion message carefully.
    Most often it tells you exactly what's wrong.
-5. **If you get stuck**, check `instructor/common_errors.md` — most
-   failures have a documented cause and fix.
+5. **If you get stuck**, raise your hand — most failures have a
+   documented cause and fix.
 
 ## If you run into trouble
 
@@ -59,8 +59,3 @@ notebook *and* committed in git. This means:
 - **Still stuck:** Jump to the next 🔄 Recovery point cell; it loads
   from a committed checkpoint so you can continue.
 
-## For the curious: solutions
-
-Solution notebooks live in `../solutions/`. They execute start-to-
-finish with every `???` filled in. The solution notebooks are for
-instructors — try to solve the exercises yourself before peeking.

@@ -91,9 +91,7 @@ def check_data_files(paths: list[str], label: str) -> bool:
             ok = False
             print(
                 f"❌ Missing {label} file: {rel}\n"
-                f"   Fix: re-run Phase 0 pipeline "
-                f"(planning/phase0_dryrun/phase0_full_pipeline.ipynb) "
-                f"or restore from git."
+                f"   Fix: restore from a clean git clone (files are committed)."
             )
         else:
             size_kb = path.stat().st_size / 1024

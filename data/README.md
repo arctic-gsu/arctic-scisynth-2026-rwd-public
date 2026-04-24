@@ -6,8 +6,7 @@ clone without network access. `data/raw/` is the input layer;
 `data/checkpoints/` is the per-day-output safety net that lets any
 notebook start independently.
 
-Full provenance, including the Phase 0 dataset-surprise log, is in
-`planning/phase0_dryrun/README.md`.
+Dataset quirks are noted inline below.
 
 ---
 
